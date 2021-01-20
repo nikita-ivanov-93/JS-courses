@@ -66,13 +66,20 @@ console.log(result);
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter(number) {
+function returnCounter(number = 0) {
   function newFunction() {
-    return number + 1;
+    return ++number;
   }
-  return newFunction();
+  return newFunction;
 }
-console.log(returnCounter(12));
+
+var f = returnCounter(10);
+console.log(f());
+console.log(f());
+console.log(f());
+// console.log(returnCounter());
+// console.log(returnCounter());
+
 /*
  Задание 5 *:
 
@@ -103,7 +110,7 @@ console.log(result);
  Пример:
    function sum(a, b) {
      return a + b;
-   }
+   } 
 
    var newSum = bindFunction(sum, 2, 4);
 
@@ -113,10 +120,10 @@ function bindFunction(fn) {
   for (var i = 1; i < arguments.length; i++) {
     fn = fn.bind(null,arguments[i]);
   }
-  return fn();
+  return fn;
 }
 var newFn = bindFunction((a,b,c,d) => {return a*b/c+d}, 3, 4, 2, 4);
-console.log(newFn);
+console.log(newFn());
 
 
 export {
