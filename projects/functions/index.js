@@ -109,12 +109,6 @@ console.log(result);
 
    console.log(newSum()) выведет 6
  */
-// function bindFunction(fn,a,b) {
-//   fn = fn.bind(null,a,b);
-//   return fn();
-// }
-// var newFn = bindFunction((a,b) => {return a*b}, 3, 4);
-// console.log(newFn);
 function bindFunction(fn) {
   for (var i = 1; i < arguments.length; i++) {
     fn = fn.bind(null,arguments[i]);
@@ -123,11 +117,13 @@ function bindFunction(fn) {
 }
 var newFn = bindFunction((a,b,c,d) => {return a*b/c+d}, 3, 4, 2, 4);
 console.log(newFn);
-// export {
-//   returnFirstArgument,
-//   sumWithDefaults,
-//   returnArgumentsArray,
-//   returnFnResult,
-//   returnCounter,
-//   bindFunction,
-// };
+
+
+export {
+  returnFirstArgument,
+  sumWithDefaults,
+  returnArgumentsArray,
+  returnFnResult,
+  returnCounter,
+  bindFunction,
+};
